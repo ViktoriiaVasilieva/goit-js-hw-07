@@ -4,20 +4,16 @@ import { galleryItems } from "./gallery-items.js";
 const gallaryContainer = document.querySelector(".gallery");
 const galleryMarkup = createGallaryItemMarkup(galleryItems);
 
+gallaryContainer.insertAdjacentHTML("beforeend", galleryMarkup);
+
 gallaryContainer.addEventListener("click", event => {
   event.preventDefault();
   const openModal = basicLightbox.create(`
-    <img src="${event.target.dataset.source}" ">
+    <img src="${event.target.dataset.source}" >
 `);
 
   openModal.show();
 });
-
-function onEscKeyPress(evt) {
-  console.log("evt", evt);
-}
-
-gallaryContainer.insertAdjacentHTML("beforeend", galleryMarkup);
 
 function createGallaryItemMarkup(items) {
   return items

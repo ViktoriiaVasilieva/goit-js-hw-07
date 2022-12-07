@@ -8,7 +8,7 @@ gallaryContainer.insertAdjacentHTML("beforeend", galleryMarkup);
 
 const lightbox = new SimpleLightbox(".gallery a", {
   captionDelay: 250,
-  captionsData: "alt",
+  captionsData: "data-caption",
 });
 
 lightbox.show();
@@ -21,7 +21,7 @@ function createGallaryItemMarkup(items) {
       <img 
       class="gallery__image" 
       src="${preview}" 
-      alt="${description}"
+      data-caption="${description}"
       />
     </a>
     </li>`;

@@ -7,6 +7,9 @@ const galleryMarkup = createGallaryItemMarkup(galleryItems);
 gallaryContainer.insertAdjacentHTML("beforeend", galleryMarkup);
 
 gallaryContainer.addEventListener("click", event => {
+  if (event.target.nodeName !== "IMG") {
+    return;
+  }
   event.preventDefault();
   const openModal = basicLightbox.create(`
     <img src="${event.target.dataset.source}" >

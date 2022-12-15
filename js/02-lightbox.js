@@ -9,6 +9,7 @@ gallaryContainer.insertAdjacentHTML("beforeend", galleryMarkup);
 const lightbox = new SimpleLightbox(".gallery a", {
   captionDelay: 250,
   captionsData: "data-caption",
+  captionPosition: "bottom",
 });
 
 lightbox.show();
